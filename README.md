@@ -1,6 +1,6 @@
-# colubrid
+# colubridae
 
-Colubrid is a Python package for applied category theory (ACT).
+Colubridae is a Python package for applied category theory (ACT).
 
 A website with complete documentation will be available in the future.
 
@@ -19,7 +19,7 @@ Opycleid requires:
 We welcome new contributors of all experience levels. The preferred way to
 contribute to opycleid is to fork the main repository on GitHub,
 then submit a “pull request” (PR). Bug reports and discussion on new features
-(only) can be posted in the [corresponding GitHub issues](https://github.com/AlexPof/opycleid/issues).
+(only) can be posted in the [corresponding GitHub issues](https://github.com/AlexPof/colubridae/issues).
 Preferably, the development of new features should be discussed beforehand
 on this page.
 
@@ -27,7 +27,7 @@ on this page.
 
 You can check the latest sources with the command:
 
-    >>> git clone https://github.com/AlexPof/colubrid.git
+    >>> git clone https://github.com/AlexPof/colubridae.git
 
 ## Testing / Tutorial
 
@@ -39,4 +39,4 @@ Will be available in the future.
 
 ### Communication
 
-Please use the [GitHub issues page](https://github.com/AlexPof/colubrid/issues).
+Please use the [GitHub issues page](https://github.com/AlexPof/colubridae/issues).
