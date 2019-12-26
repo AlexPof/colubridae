@@ -58,6 +58,7 @@ class Functor(object):
             raise Exception("Target is not a valid Category class\n")
         self.source = source
         self.target = target
+
         self.obj_mapping = {k:v for k,v in obj_mapping.items() if v is not None}
         self.morph_mapping = {k:v for k,v in morph_mapping.items() if v is not None}
         if not from_generators:
@@ -77,7 +78,7 @@ class Functor(object):
             for f,im_f in temp_list:
                 for g,im_g in self.generator_mapping.items():
                     k,v = g*f,im_g*im_f
-                    if g*f is not None:
+                    if k is not None:
                         if k in self.morph_mapping:
                             if not self.morph_mapping[k]==v:
                                 raise Exception("Not a valid Functor")

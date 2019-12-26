@@ -32,7 +32,7 @@ class Function(object):
             raise Exception("Source is not a valid SetObject class\n")
         self.source = source
         self.target = target
-        ## Remove check, for allowing partial functions
+
         if not self.source.elems == set(mapping.keys()):
             raise Exception("Not a valid function mapping\n")
         if not set(mapping.values()).issubset(self.target.elems):
@@ -122,7 +122,7 @@ class Relation(object):
             raise Exception("Source is not a valid SetObject class\n")
         self.source = source
         self.target = target
-        self.mapping = {k:v for k,v in mapping.items() if v is not None}
+        self.mapping = {k:v for k,v in mapping.items() if (v is not None and type(v)==set)}
         
     def __eq__(self,rhs):
         if rhs is None:
@@ -140,9 +140,10 @@ class Relation(object):
             return None
         new_map={}
         for x,y in rhs.mapping.items():
+            ## Rel is the Kleisli category for the powerset monad
             image = [self(z) for z in y]
             image = [v for u in image if u is not None for v in u ]
-            new_map[x] = list(set(image))
+            new_map[x] = set(image)
         return Relation(rhs.source,self.target,new_map)
     
     def __call__(self,x):
@@ -158,4 +159,4 @@ class Relation(object):
     def get_identity_morphism(X):
         if not isinstance(X,SetObject):
             raise Exception("Not a valid SetObject class\n")
-        return Relation(X,X,{x:[x] for x in X.elems})
+        return Relation(X,X,{x:{x} for x in X.elems})
