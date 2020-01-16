@@ -13,7 +13,7 @@ except ImportError:
     sys.exit(1)
 
 setup(name='colubridae',
-      version='0.0.1',
+      version='0.0.2',
       description='Applied Category Theory in Python',
       author='Alexandre Popoff',
       author_email='al.popoff@free.fr',
