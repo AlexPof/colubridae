@@ -92,7 +92,7 @@ class PartialFunction(object):
                (self.target == rhs.target)
 
     def __mul__(self,rhs):
-        if not isinstance(rhs,Function):
+        if not isinstance(rhs,PartialFunction):
             raise Exception("RHS is not a valid PartialFunction class\n")
         if not self.source==rhs.target:
             return None
